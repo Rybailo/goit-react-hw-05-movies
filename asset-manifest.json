@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/Rybailo/goit-react-hw-05-movies/static/css/main.83498e3a.css",
-    "main.js": "/Rybailo/goit-react-hw-05-movies/static/js/main.d9497076.js",
+    "main.js": "/Rybailo/goit-react-hw-05-movies/static/js/main.ba102511.js",
     "static/js/736.2a043167.chunk.js": "/Rybailo/goit-react-hw-05-movies/static/js/736.2a043167.chunk.js",
     "static/js/387.5d167b64.chunk.js": "/Rybailo/goit-react-hw-05-movies/static/js/387.5d167b64.chunk.js",
-    "static/js/765.75e37613.chunk.js": "/Rybailo/goit-react-hw-05-movies/static/js/765.75e37613.chunk.js",
+    "static/js/765.84ec0be1.chunk.js": "/Rybailo/goit-react-hw-05-movies/static/js/765.84ec0be1.chunk.js",
     "static/js/700.d454c156.chunk.js": "/Rybailo/goit-react-hw-05-movies/static/js/700.d454c156.chunk.js",
-    "static/js/651.1aed9574.chunk.js": "/Rybailo/goit-react-hw-05-movies/static/js/651.1aed9574.chunk.js",
+    "static/js/651.7b638779.chunk.js": "/Rybailo/goit-react-hw-05-movies/static/js/651.7b638779.chunk.js",
     "static/js/294.b3ae15a2.chunk.js": "/Rybailo/goit-react-hw-05-movies/static/js/294.b3ae15a2.chunk.js",
     "index.html": "/Rybailo/goit-react-hw-05-movies/index.html",
     "main.83498e3a.css.map": "/Rybailo/goit-react-hw-05-movies/static/css/main.83498e3a.css.map",
-    "main.d9497076.js.map": "/Rybailo/goit-react-hw-05-movies/static/js/main.d9497076.js.map",
+    "main.ba102511.js.map": "/Rybailo/goit-react-hw-05-movies/static/js/main.ba102511.js.map",
     "736.2a043167.chunk.js.map": "/Rybailo/goit-react-hw-05-movies/static/js/736.2a043167.chunk.js.map",
     "387.5d167b64.chunk.js.map": "/Rybailo/goit-react-hw-05-movies/static/js/387.5d167b64.chunk.js.map",
-    "765.75e37613.chunk.js.map": "/Rybailo/goit-react-hw-05-movies/static/js/765.75e37613.chunk.js.map",
+    "765.84ec0be1.chunk.js.map": "/Rybailo/goit-react-hw-05-movies/static/js/765.84ec0be1.chunk.js.map",
     "700.d454c156.chunk.js.map": "/Rybailo/goit-react-hw-05-movies/static/js/700.d454c156.chunk.js.map",
-    "651.1aed9574.chunk.js.map": "/Rybailo/goit-react-hw-05-movies/static/js/651.1aed9574.chunk.js.map",
+    "651.7b638779.chunk.js.map": "/Rybailo/goit-react-hw-05-movies/static/js/651.7b638779.chunk.js.map",
     "294.b3ae15a2.chunk.js.map": "/Rybailo/goit-react-hw-05-movies/static/js/294.b3ae15a2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.83498e3a.css",
-    "static/js/main.d9497076.js"
+    "static/js/main.ba102511.js"
   ]
 }
