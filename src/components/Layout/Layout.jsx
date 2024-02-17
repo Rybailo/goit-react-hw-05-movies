@@ -1,14 +1,22 @@
-import Header from 'components/Header/Header';
-import React from 'react';
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-
-const Layout = () => {
+import Loader from 'components/Loader/Loader';
+import { Container, Header, Link } from './Layout.styled';
+export const Layout = () => {
   return (
-    <div>
-      <Header />
-      <Outlet />
-    </div>
+    <Container>
+      <Header>
+        <nav>
+          <Link to="/" end>
+            Home
+          </Link>
+          <Link to="/movies">Movies</Link>
+        </nav>
+      </Header>
+
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
+    </Container>
   );
 };
-
-export default Layout;
