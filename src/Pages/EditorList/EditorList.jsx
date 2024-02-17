@@ -2,7 +2,7 @@ import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { List, Item, MovieLink } from './EditorList.styled';
 
-const EditorList = ({ films }) => {
+const EditorList = ({ films, poster_path }) => {
   const location = useLocation();
 
   return (
@@ -10,6 +10,10 @@ const EditorList = ({ films }) => {
       {films.map(film => (
         <Item key={film.id}>
           <MovieLink to={`/movies/${film.id}`} state={{ from: location }}>
+            <img
+              src={'http://image.tmdb.org/t/p/w300' + film.poster_path}
+              alt={film.title}
+            ></img>
             {film.title}
           </MovieLink>
         </Item>
