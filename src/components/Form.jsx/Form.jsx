@@ -1,35 +1,24 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';
 import { SearchForm, Input, Button } from './Form.styled';
+import { useSearchParams } from 'react-router-dom';
 
-const Form = ({ searchMovies }) => {
-  const [query, setQuery] = useState('');
-
-  const handleInputChange = e => {
-    setQuery(e.target.value);
-  };
+const Form = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const sQuery = searchParams.get('searchQuery');
 
   const handleSubmit = e => {
     e.preventDefault();
-    searchMovies(query.toLowerCase());
+    const searchValue = e.currentTarget.elements.query.value;
+    setSearchParams({
+      searchQuery: searchValue,
+    });
   };
 
   return (
     <SearchForm onSubmit={handleSubmit}>
-      <Input
-        type="text"
-        name="query"
-        autoFocus
-        value={query}
-        onChange={handleInputChange}
-      />
-
+      <Input type="text" name="query" defaultValue={sQuery} autoFocus />
       <Button type="submit">Search</Button>
     </SearchForm>
   );
-};
-Form.prototype = {
-  searchMovies: PropTypes.func.isRequired,
 };
 
 export default Form;

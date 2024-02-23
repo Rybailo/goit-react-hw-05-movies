@@ -1,38 +1,43 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Loader from '../../components/Loader/Loader';
 import EditorList from '../../Pages/EditorList/EditorList';
 import Form from '../../components/Form.jsx/Form';
-import { fetchSearchByKeyword } from '../../Services/api';
+import { fetchSearchByKeyword } from 'Services/api';
+import { useSearchParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Movies = () => {
-  const [searchFilms, setSearchFilms] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [noMoviesText, setNoMoviesText] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [films, setFilms] = useState(null);
+  const [searchParams] = useSearchParams();
+  const sQuery = searchParams.get('searchQuery');
 
-  const searchMovies = queryMovie => {
-    setLoading(true);
+  useEffect(() => {
+    const fetchData = async () => {
+      if (sQuery === null) return;
 
-    fetchSearchByKeyword(queryMovie)
-      .then(searchResults => {
-        setSearchFilms(searchResults);
-        setNoMoviesText(searchResults.length === 0);
-      })
-      .catch(error => {
-        console.log(error);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  };
+      try {
+        setIsLoading(true);
+        const film = await fetchSearchByKeyword(sQuery);
+        setFilms(film);
+      } catch (error) {
+        toast(error.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    if (sQuery !== null) {
+      fetchData();
+    }
+  }, [sQuery]);
 
   return (
     <main>
-      <Form searchMovies={searchMovies} />
-      {loading && <Loader />}
-      {noMoviesText && (
-        <p>There is no movies with this request. Please, try again</p>
-      )}
-      {searchFilms && <EditorList films={searchFilms} />}
+      {<Form />}
+      {isLoading && <Loader />}
+      {sQuery !== null && sQuery?.length > 0}
+      {films && <EditorList films={films} />}
     </main>
   );
 };
