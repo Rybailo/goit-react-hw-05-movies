@@ -8,7 +8,7 @@ import { ToastContainer } from 'react-toastify';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter basename="/">
+    <BrowserRouter basename="/goit-react-hw-05-movies">
       <App />
       <ToastContainer
         position="top-right"
